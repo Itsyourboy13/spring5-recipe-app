@@ -2,8 +2,10 @@ package guru.springframework.domain;
 
 import lombok.Data;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Created on 12/20/2024
@@ -11,14 +13,9 @@ import java.math.BigDecimal;
  */
 @Data
 @Entity
-public class Ingredient {
+public class UnitOfMeasure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-    private BigDecimal amount;
-    @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure uom;
-    @ManyToOne
-    private Recipe recipe;
 }
