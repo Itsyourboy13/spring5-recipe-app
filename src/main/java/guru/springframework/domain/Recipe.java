@@ -2,8 +2,9 @@ package guru.springframework.domain;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created on 12/20/2024
@@ -28,9 +29,8 @@ public class Recipe {
     private List<Ingredient> ingredients;
     @Lob
     private Byte[] image;
-
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
-
-
+    @ManyToMany
+    private Set<Category> categories;
 }
