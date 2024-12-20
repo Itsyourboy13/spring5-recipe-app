@@ -1,7 +1,11 @@
 package guru.springframework.domain;
 
-import lombok.Data;
+
 import jakarta.persistence.*;
+import lombok.Data;
+
+
+import java.util.Set;
 
 /**
  * Created on 12/20/2024
@@ -9,9 +13,11 @@ import jakarta.persistence.*;
  */
 @Data
 @Entity
-public class UnitOfMeasure {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
+    @ManyToMany(mappedBy = "categories")
+    private Set<Recipe> recipes;
 }

@@ -2,7 +2,7 @@ package guru.springframework.domain;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Created on 12/20/2024
