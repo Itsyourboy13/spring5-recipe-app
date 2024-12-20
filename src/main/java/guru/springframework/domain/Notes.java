@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 /**
  * Created on 12/20/2024
+ * By AnDrew Card
  */
 @Data
 @Entity

@@ -3,9 +3,11 @@ package guru.springframework.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created on 12/20/2024
+ * By AnDrew Card
  */
 @Data
 @Entity
@@ -22,6 +24,8 @@ public class Recipe {
     private String directions;
     //todo add
     //private Difficulty difficulty
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private List<Ingredient> ingredients;
     @Lob
     private Byte[] image;
 
